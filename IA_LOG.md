@@ -1,0 +1,21 @@
+# 🤖 Registro de Uso de Inteligência Artificial — Sombras do Reino
+
+> Conforme diretriz da disciplina, este log documenta as interações mais relevantes com IA generativa durante o desenvolvimento, evidenciando análise crítica, adaptação e validação técnica pelo trio.
+
+---
+
+### Registro 01 — Planejamento da Arquitetura POO e Modelagem do Banco (Checkpoint 1)
+* **Problema:** Precisávamos estruturar a divisão de responsabilidades entre as classes Java (incluindo a mecânica autoral de poções limitadas) e as tabelas do banco de dados antes de iniciar a codificação, garantindo aderência aos roteiros da disciplina.
+* **Prompt:** Solicitamos o esboço arquitetural das classes Java (`Personagem`, `Mago`, `Arqueiro`, `Item`, `ConexaoDB`, `JogoDAO`, `Main`) e a modelagem das tabelas SQL (`classe_personagem`, `personagem`, `item`, `inventario`, `partida`) com suas chaves primárias e estrangeiras para o jogo Sombras do Reino.
+* **Sugestão da IA:** Manter `Personagem` como classe abstrata com encapsulamento rigoroso (`private` e limites de vida 0 a 100), isolar o acesso JDBC em `ConexaoDB` e `JogoDAO`, e estruturar 5 tabelas relacionais usando chave primária composta `(id_personagem, id_item)` na tabela `inventario` para controlar o estoque de poções.
+* **Decisão do grupo:** Revisamos o esboço em trio e aprovamos a inclusão da coluna `recurso_atual` na tabela `personagem` para persistir a mana inicial do Mago e as flechas do Arqueiro diretamente do banco, além de manter a tabela `partida` para registrar o desfecho dos combates.
+* **Teste realizado:** Conferimos manualmente todas as ligações de PK/FK entre as 5 tabelas e verificamos se cada requisito obrigatório de POO e persistência estava mapeado no documento `docs/arquitetura.md`.
+
+---
+
+### Registro 02 — Planejamento Operacional por Integrante e Rotação de Papéis (Checkpoint 1)
+* **Problema:** Precisávamos desdobrar o plano geral do projeto em tarefas práticas, critérios de aceite e metas de commits para cada integrante do trio, contemplando a rotação obrigatória de papéis após o Checkpoint 2.
+* **Prompt:** Solicitamos a criação de planos individuais de execução para Isabella Vilas, Ediny e Maria Eduarda alinhados aos roteiros de POO, Banco de Dados e Git/GitHub.
+* **Sugestão da IA:** Dividir as responsabilidades em Fase 1 (papéis iniciais até o Checkpoint 2) e Fase 2 (rotação de lideranças nos Checkpoints 3 a 5), vinculando cada etapa aos testes de aceitação oficiais (T01–T10) e à preparação para a banca individual.
+* **Decisão do grupo:** Definimos a ordem sequencial de inicialização do repositório pela Isabella e, em seguida, o trabalho paralelo em pastas separadas (`src/` e `sql/`) para evitar conflitos no Git antes da integração.
+* **Teste realizado:** Validamos em trio se todas as entregas obrigatórias e trocas de papel estavam distribuídas de forma equilibrada entre as três integrantes.
