@@ -19,3 +19,14 @@
 * **Sugestão da IA:** Dividir as responsabilidades em Fase 1 (papéis iniciais até o Checkpoint 2) e Fase 2 (rotação de lideranças nos Checkpoints 3 a 5), vinculando cada etapa aos testes de aceitação oficiais (T01–T10) e à preparação para a banca individual.
 * **Decisão do grupo:** Definimos a ordem sequencial de inicialização do repositório pela Isabella e, em seguida, o trabalho paralelo em pastas separadas (`src/` e `sql/`) para evitar conflitos no Git antes da integração.
 * **Teste realizado:** Validamos em trio se todas as entregas obrigatórias e trocas de papel estavam distribuídas de forma equilibrada entre as três integrantes.
+
+---
+
+---
+
+### Registro 03 — Implementação de Herança e Polimorfismo em Mago e Arqueiro (Checkpoint 2)
+* **Problema:** Precisávamos criar as classes concretas `Mago` e `Arqueiro` herdando de `Personagem`, garantindo que cada uma controlasse seu próprio recurso especial (mana e flechas) e bloqueasse o ataque quando o recurso acabasse.
+* **Prompt:** Solicitamos a implementação incremental das subclasses `Mago.java` e `Arqueiro.java` alinhadas à classe abstrata `Personagem` e aos testes de polimorfismo e bloqueio de recurso do roteiro de POO.
+* **Sugestão da IA:** Usar `extends Personagem` com chamada `super(...)` nos construtores, encapsular `mana` e `flechas` como `private` e sobrescrever `@Override atacar()` descontando o recurso e retornando `0` quando insuficiente.
+* **Decisão do grupo:** Definimos o ataque do Mago com dano 25 (custo de 10 de mana) e o ataque do Arqueiro com dano 20 (custo de 1 flecha), exibindo no console o consumo e o saldo restante a cada turno.
+* **Teste realizado:** Compilamos `src/*.java` com `javac` sem erros e validamos que o `.gitignore` oculta os arquivos `.class` gerados.
