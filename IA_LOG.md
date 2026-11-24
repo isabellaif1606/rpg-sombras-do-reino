@@ -31,11 +31,18 @@
 
 ---
 
----
-
 ### Registro 04 — Estruturação do Banco Relacional e Carga Inicial no MySQL (Checkpoint 3)
 * **Problema:** Precisávamos construir os scripts SQL (`01_criacao.sql` e `02_dados_iniciais.sql`) no MySQL representando classes, personagens, itens, inventário e partidas sem usar comandos `SELECT`, garantindo integridade referencial e todos os testes DDL/DML do laboratório Banco do Reino.
 * **Prompt:** Solicitamos revisão e validação dos scripts DDL e DML criados para o banco `sombras_do_reino` conforme os requisitos de chaves primárias/estrangeiras, evolução com `ALTER TABLE` e manipulações seguras com `UPDATE` e `DELETE`.
 * **Sugestão da IA:** Manter a chave primária composta `(id_personagem, id_item)` em `inventario` e a tabela `partida`, complementar o catálogo para 5 itens e 6 registros de inventário, e incluir `ALTER TABLE` (`experiencia`), `UPDATE ... WHERE`, `DELETE ... WHERE` e `DROP TABLE rascunho`.
 * **Decisão do grupo:** Aplicamos os complementos nos scripts da pasta `sql/` alinhando os nomes e valores dos personagens (`Eldrin` e `Lyra`) e poções com a mecânica autoral do jogo em Java.
 * **Teste realizado:** Reexecutamos `01_criacao.sql` e `02_dados_iniciais.sql` em um banco limpo no MySQL e validamos pela árvore de objetos e pela grade de dados (sem `SELECT`) a criação das 5 tabelas, rejeição de chaves inválidas e remoção segura dos itens de teste.
+
+---
+
+### Registro 05 — Implementação da Mecânica Autoral de Poções Limitadas e Game Loop (Checkpoint 2)
+* **Problema:** Precisávamos integrar os personagens em uma coleção dinâmica de inimigos, implementar nossa mecânica autoral de poções limitadas e criar um Game Loop resistente a entradas inválidas no console.
+* **Prompt:** Solicitamos a criação das classes `Item.java` e `Main.java` utilizando `List<Personagem> horda`, laço `while` controlado por booleano e tratamento de exceções no `Scanner`.
+* **Sugestão da IA:** Encapsular o estoque de poções em `Item.java` com método `usar()` retornando `0` quando zerado, gerenciar inimigos em `ArrayList<Personagem>` verificando `!horda.isEmpty()` antes de acessar índices, e validar entradas do menu via `Integer.parseInt(scanner.nextLine())` dentro de `try-catch`.
+* **Decisão do grupo:** Permitimos que o jogador escolha entre Mago ou Arqueiro no início da partida com 2 poções de cura (+30 de vida cada) contra uma horda de 3 inimigos variados.
+* **Teste realizado:** Compilamos todas as classes com `javac src/*.java` e executamos `java -cp src Main`, testando ataques, bloqueio ao acabar mana/flechas, limite de 2 poções, digitação de letras no menu (sem travar) e encerramento por vitória e fuga.
