@@ -6,13 +6,13 @@ Mini-RPG de console desenvolvido em Java com persistência em banco de dados rel
 
 ## 👥 Integrantes e Papéis
 
-| Integrante | Papel Inicial (até Checkpoint 2) | Papel Pós-Rotação (Checkpoints 3 a 5) |
+| Integrante | Papel Inicial (Checkpoints 1 a 3) | Papel Pós-Rotação (Checkpoints 4 e 5) |
 | :--- | :--- | :--- |
 | **Isabella Vilas** | Versionamento / Qualidade | Integração JDBC & Documentação Final |
 | **Ediny** | Banco de Dados | Qualidade, Testes de Aceitação & Validação Java |
 | **Maria Eduarda** | Desenvolvimento / POO | Persistência SQL & Reprodutibilidade Final |
 
-> **Governança da Equipe:** Conforme diretriz do projeto, os papéis serão rotacionados após o Checkpoint 2 para que todas tenham commits e domínio técnico em POO, Banco de Dados e Git/Qualidade.
+> **Governança da Equipe:** Conforme diretriz do projeto, os papéis são rotacionados após a conclusão da base de POO e Banco de Dados (Checkpoint 3) para que todas tenham commits e domínio técnico em POO, Banco de Dados e Git/Qualidade.
 
 ---
 
@@ -59,8 +59,8 @@ rpg-sombras-do-reino/
 ## 📅 Checklist dos Checkpoints (2 Semanas)
 - [x] **Dia 1 — Lançamento:** Definição do tema, papéis iniciais, criação do repositório e `README.md` inicial.
 - [x] **Checkpoint 1 — Planejamento:** Esboço das classes Java e modelagem das tabelas SQL (`docs/arquitetura.md`).
-- [ ] **Checkpoint 2 — Núcleo POO:** Classes `Personagem`, `Mago`, `Arqueiro`, coleção `horda` e Game Loop parcial.
-- [ ] **Checkpoint 3 — Banco de Dados:** Scripts DDL e DML testados em ambiente limpo sem erros.
+- [x] **Checkpoint 2 — Núcleo POO:** Classes `Personagem`, `Mago`, `Arqueiro`, `Item`, coleção `horda` e Game Loop funcional.
+- [x] **Checkpoint 3 — Banco de Dados:** Scripts DDL e DML testados em ambiente limpo sem erros.
 - [ ] **Checkpoint 4 — Integração:** Conexão JDBC, carregamento de herói/inventário e salvamento de partida.
 - [ ] **Checkpoint 5 — Qualidade e Documentação:** Bateria de testes (T01–T10), atualização do `README.md` e `IA_LOG.md`.
 - [ ] **Entrega Final:** Revisão geral e tag/commit final para defesa técnica.
