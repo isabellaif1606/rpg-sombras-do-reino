@@ -46,3 +46,10 @@ CREATE TABLE partida (
     CONSTRAINT fk_partida_personagem 
         FOREIGN KEY (id_personagem) REFERENCES personagem(id_personagem)
 );
+ALTER TABLE personagem ADD COLUMN experiencia INT NOT NULL DEFAULT 0;
+
+CREATE TABLE rascunho (
+    id INT PRIMARY KEY,
+    observacao VARCHAR(100)
+);
+DROP TABLE rascunho;
