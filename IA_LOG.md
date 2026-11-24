@@ -22,11 +22,20 @@
 
 ---
 
----
-
 ### Registro 03 — Implementação de Herança e Polimorfismo em Mago e Arqueiro (Checkpoint 2)
 * **Problema:** Precisávamos criar as classes concretas `Mago` e `Arqueiro` herdando de `Personagem`, garantindo que cada uma controlasse seu próprio recurso especial (mana e flechas) e bloqueasse o ataque quando o recurso acabasse.
 * **Prompt:** Solicitamos a implementação incremental das subclasses `Mago.java` e `Arqueiro.java` alinhadas à classe abstrata `Personagem` e aos testes de polimorfismo e bloqueio de recurso do roteiro de POO.
 * **Sugestão da IA:** Usar `extends Personagem` com chamada `super(...)` nos construtores, encapsular `mana` e `flechas` como `private` e sobrescrever `@Override atacar()` descontando o recurso e retornando `0` quando insuficiente.
 * **Decisão do grupo:** Definimos o ataque do Mago com dano 25 (custo de 10 de mana) e o ataque do Arqueiro com dano 20 (custo de 1 flecha), exibindo no console o consumo e o saldo restante a cada turno.
 * **Teste realizado:** Compilamos `src/*.java` com `javac` sem erros e validamos que o `.gitignore` oculta os arquivos `.class` gerados.
+
+---
+
+---
+
+### Registro 04 — Estruturação do Banco Relacional e Carga Inicial no MySQL (Checkpoint 3)
+* **Problema:** Precisávamos construir os scripts SQL (`01_criacao.sql` e `02_dados_iniciais.sql`) no MySQL representando classes, personagens, itens, inventário e partidas sem usar comandos `SELECT`, garantindo integridade referencial e todos os testes DDL/DML do laboratório Banco do Reino.
+* **Prompt:** Solicitamos revisão e validação dos scripts DDL e DML criados para o banco `sombras_do_reino` conforme os requisitos de chaves primárias/estrangeiras, evolução com `ALTER TABLE` e manipulações seguras com `UPDATE` e `DELETE`.
+* **Sugestão da IA:** Manter a chave primária composta `(id_personagem, id_item)` em `inventario` e a tabela `partida`, complementar o catálogo para 5 itens e 6 registros de inventário, e incluir `ALTER TABLE` (`experiencia`), `UPDATE ... WHERE`, `DELETE ... WHERE` e `DROP TABLE rascunho`.
+* **Decisão do grupo:** Aplicamos os complementos nos scripts da pasta `sql/` alinhando os nomes e valores dos personagens (`Eldrin` e `Lyra`) e poções com a mecânica autoral do jogo em Java.
+* **Teste realizado:** Reexecutamos `01_criacao.sql` e `02_dados_iniciais.sql` em um banco limpo no MySQL e validamos pela árvore de objetos e pela grade de dados (sem `SELECT`) a criação das 5 tabelas, rejeição de chaves inválidas e remoção segura dos itens de teste.
